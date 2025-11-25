@@ -1,0 +1,62 @@
+#parrafoOpciones{
+word-spacing: 2em;
+
+}
+
+p, label {
+    font-family: "Century Gothic";
+    font-size: 16px;
+}
+
+h1 {
+    font-family: "Roboto";
+    font-size: 24px;
+    float: left;
+}
+h2{
+    font-family: "Roboto";
+    font-size: 22px;
+}
+
+#opciones {
+    text-align: right;
+    float: right;
+    word-spacing: 1em;
+    margin-top: 5px;
+}
+
+#principal {
+overflow: hidden;
+}
+
+#seccionHeader{
+    border-style:groove;
+    border-color: black;
+    background-color: antiquewhite;
+
+}
+
+#seccionCentral{
+    width: 1000px;
+    height: 600px;
+    margin:0 auto;
+    background-color: aquamarine;
+}
+
+#seccionCentral h2{
+    text-align: left;
+}
+
+
+.contenedor-tipo-vuelo{
+    background-color: azure;
+    width: 150px;
+    height: 100px;
+    border-color: black;
+    border-style: groove;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    text-align: center;    
+}
+
