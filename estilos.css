@@ -60,3 +60,27 @@ overflow: hidden;
     text-align: center;    
 }
 
+
+.contenedor-tipo-vuelo2{
+    background-color: azure;
+    width: 150px;
+    height: 40px;
+    border-color: black;
+    border-style: groove;
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    text-align: center;    
+}
+
+.ciudad-aeropuerto{
+    margin: 1%;
+}
+
+.calendario{
+
+    margin: 1%;
+    width: 200px;
+    height: 20px;
+}
+
