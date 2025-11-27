@@ -1,140 +1,157 @@
-:root{
-    --paletacolorc1: #66c2cd;
+/* --- 1. VARIABLES GLOBALES --- */
+:root {
+    /* Definimos los 4 colores principales aquí. 
+       Si cambias un hex aquí, cambia en todos los sitios donde se use la variable. */
+    --paletacolorc1: #66c2cd; /* Turquesa claro */
     --paletacolorc2: #2daebf;
     --paletacolorc3: #0f6e7d;
-    --paletacolorc4: #064b55;
+    --paletacolorc4: #064b55; /* Turquesa muy oscuro */
 
+    /* Variables para fuentes */
     --tipoLetrah1: "Roboto";
     --tipoLetraLabel: "Roboto";
 }
-header{
-    background-color: aqua;
+
+header {
+    background-color: aqua; /* Fondo general del encabezado */
 }
 
-.paletaColores{
+/* --- BLOQUE DE PALETA DE COLORES (ARRIBA IZQUIERDA) --- */
+.paletaColores {
     text-align: left;
     margin-bottom: 10px;
 }
 
-.colordiv{
-   width: 100px;
-   height: 50px;
-   display: inline-block;
-   margin-left: 20px;
+.colordiv {
+    width: 100px;
+    height: 50px;
+    display: inline-block; /* Permite poner las cajas una al lado de la otra sin usar float */
+    margin-left: 20px;
 }
 
-.c1{background-color: var(--paletacolorc1)}
-.c2{background-color: var(--paletacolorc2);}
-.c3{background-color: var(--paletacolorc3);}
-.c4{background-color: var(--paletacolorc4);}
+/* Asignamos los colores usando las variables */
+.c1 { background-color: var(--paletacolorc1); }
+.c2 { background-color: var(--paletacolorc2); }
+.c3 { background-color: var(--paletacolorc3); }
+.c4 { background-color: var(--paletacolorc4); }
 
-
-#papaMain{
+/* --- ESTRUCTURA PRINCIPAL (LAYOUT) --- */
+#papaMain {
     width: 100%;
-    overflow: hidden;
-
+    /* ¡VITAL! overflow: hidden obliga a este contenedor a estirarse para abrazar 
+       a las dos columnas flotantes (Izq y Derecha). Sin esto, la altura sería 0. */
+    overflow: hidden; 
 }
 
-#loren h1{
+/* --- TÍTULOS HEADER --- */
+#loren h1 {
     text-align: left;
     margin-left: 10%;
     font-family: var(--tipoLetrah1);
     color: var(--paletacolorc2);
 }
-#loren label{
+
+#loren label {
     text-align: right;
-    margin-left: 70%;
+    margin-left: 70%; /* Empuja el texto mucho a la derecha */
     color: var(--paletacolorc4);
     font-family: var(--tipoLetraLabel);
     font-size: 24px;
-
 }
 
-#barra-inferior{
+/* --- BARRA DE NAVEGACIÓN INFERIOR (5 COLUMNAS) --- */
+#barra-inferior {
     width: 100%;
-    overflow: hidden; /* IMPORTANTE: Esto hace que el padre recupere su altura */
+    overflow: hidden; /* Limpia los floats de los recuadros internos */
 }
 
-
-.recuadroHeaders{
-    float: left;
-    width: 20%;
+.recuadroHeaders {
+    float: left; /* Pone los botones uno al lado del otro */
+    width: 20%;  /* 20% x 5 elementos = 100% del ancho total */
     height: 30px;
-    border: 2px solid white; /* O el color que uses */
+    border: 2px solid white; 
+    
+    /* box-sizing: border-box es fundamental aquí. 
+       Significa que los 2px de borde están INCLUIDOS en el 20% de ancho.
+       Si no lo pones, el ancho real sería 20% + 4px de borde y no cabrían en una línea. */
     box-sizing: border-box;
-    /* IMPORTANTE: No pongas margen lateral (margin-left/right) o se romperá la matemática */
+    
     margin: 0;
     text-align: center;
-    line-height: 30px;
+    line-height: 30px; /* Centra el texto verticalmente */
     vertical-align: middle;
     font-family: var(--tipoLetrah1);
-    
 }
 
-.parrafo{
-    width: 400px;
+/* --- ESTILOS DE TEXTO --- */
+.parrafo {
+    width: 400px; /* Ancho fijo para el primer párrafo */
 }
 
-.parrafo2{
-    width: 275px;
+.parrafo2 {
+    width: 275px; /* Ancho fijo más estrecho para los otros */
 }
 
-.contenedor{
+.contenedor {
     text-align: left;
 }
 
-.contenedor p{
-    margin-left: 100px;
+.contenedor p {
+    margin-left: 100px; /* Indentación grande a la izquierda del texto */
     margin-top: 0;
 }
 
 .destacado {
-    font-weight: bold;      /* Pone el texto en negrita */
-    font-style: italic;     /* Pone el texto en cursiva */
-    color: #333;            /* Un color un poco más oscuro si lo necesitas */
-    /* text-decoration: underline; */ /* Si quieres que también esté subrayado */
+    font-weight: bold;      /* Negrita */
+    font-style: italic;     /* Cursiva */
+    color: #333;            
 }
 
-.contenedor h2,h3,h4{
+/* Selector múltiple: aplica lo mismo a h2, h3 y h4 dentro de .contenedor */
+.contenedor h2, h3, h4 {
     color: var(--paletacolorc4);
     margin-top: auto;
-    float: left;
+    float: left; /* Hace que el título flote a la izquierda del párrafo */
 }
 
-#contenedor_imagen img{
-float: left;
+/* --- IMAGEN Y LISTA (ABAJO IZQUIERDA) --- */
+#contenedor_imagen img {
+    float: left; /* Imagen a la izquierda */
 }
 
-#contenedor_imagen ul{
-float: left;
-margin: 0;
-padding: 0;
+#contenedor_imagen ul {
+    float: left; /* Lista a la derecha de la imagen */
+    margin: 0;
+    padding: 0;
 }
 
-#contenedor_imagen li{
-margin-left: 20px;
-margin-bottom: 10px;
-
+#contenedor_imagen li {
+    margin-left: 20px;
+    margin-bottom: 10px;
 }
 
-#seccionIzq{
-    float: left;
-    border-right: 2px solid #ccc;
-    width: 45%;
+/* --- COLUMNA IZQUIERDA (MAIN) --- */
+#seccionIzq {
+    float: left; /* Se pega a la izquierda */
+    border-right: 2px solid #ccc; /* Línea divisoria vertical */
+    width: 45%;  /* Ocupa un poco menos de la mitad */
 }
 
-#contenedor_derecho{
-    float: right;
+/* --- COLUMNA DERECHA (MAIN) --- */
+#contenedor_derecho {
+    float: right; /* Se pega a la derecha */
     position: relative;
-    width: 50%;
+    width: 50%; /* La suma es 45% + 50% = 95%. El 5% restante es espacio vacío en medio. */
 }
 
-/* El cuadradito azul decorativo */
+/* --- COMPONENTES COLUMNA DERECHA (NOTICIAS) --- */
+
+/* El cuadradito azul decorativo antes de los títulos */
 .cuadradito {
     display: inline-block;
     width: 12px;
     height: 12px;
-    background-color: var(--paletacolorc2); /* Color turquesa */
+    background-color: var(--paletacolorc2);
     margin-right: 8px;
 }
 
@@ -144,22 +161,22 @@ margin-bottom: 10px;
     font-size: 18px;
 }
 
-/* Para poner imagen a la izquierda y texto a la derecha */
+/* Contenedor para Imagen + Texto lateral */
 .contenido-mix {
-    overflow: hidden; /* Limpia los floats internos */
+    overflow: hidden; /* Truco para que el contenedor crezca según el contenido flotante */
     margin-bottom: 20px;
 }
 
 .img-noticia {
-    float: left;
-    width: 80px; /* Tamaño de la imagen pequeña */
+    float: left; /* Imagen a la izquierda */
+    width: 80px; 
     height: auto;
-    margin-right: 15px;
+    margin-right: 15px; /* Espacio entre imagen y texto */
     border: 1px solid #ddd;
 }
 
 .texto-noticia {
-    overflow: hidden; /* Hace que el texto no se meta debajo de la imagen */
+    overflow: hidden; /* Esto hace que el texto NO se meta debajo de la imagen, sino que respete su columna */
 }
 
 .texto-noticia h5 {
@@ -176,7 +193,7 @@ margin-bottom: 10px;
 }
 
 .enlace-leer {
-    display: block;
+    display: block; /* Para que ocupe su propia línea */
     text-align: right;
     color: var(--paletacolorc3);
     text-decoration: none;
@@ -185,7 +202,7 @@ margin-bottom: 10px;
     margin-top: 5px;
 }
 
-/* --- CAJAS Y BOTONES DEL TERCER BLOQUE --- */
+/* --- TERCER BLOQUE: CAJAS DE COLORES Y BOTONES --- */
 .cajas-botones {
     overflow: hidden;
     margin-bottom: 15px;
@@ -193,19 +210,19 @@ margin-bottom: 10px;
 }
 
 .caja-info {
-    float: left;
+    float: left; /* Caja de texto a la izquierda */
     width: 55%;
     background-color: var(--paletacolorc2);
     color: #064b55;
     padding: 10px;
     font-size: 12px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Padding incluido en el ancho */
 }
 
 .boton-verde {
-    float: right;
-    width: 40%;
-    background-color: var(--paletacolorc4); /* Verde oscuro */
+    float: right; /* Botón a la derecha */
+    width: 40%;   /* 55% + 40% = 95% (queda un hueco del 5% entre ellos) */
+    background-color: var(--paletacolorc4); 
     color: white;
     padding: 10px;
     text-align: center;
@@ -215,32 +232,29 @@ margin-bottom: 10px;
 }
 
 .boton-verde:hover {
-    background-color: #0f6e7d;
+    background-color: #0f6e7d; /* Cambio de color al pasar el ratón */
 }
 
-
-
-footer{
-/* Color de fondo turquesa/verde azulado (similar al de la imagen) */
+/* --- FOOTER (PIE DE PÁGINA) --- */
+footer {
     background-color: #379683;
-    color: white; /* Color del texto */
-    text-align: center; /* Centra todo el contenido */
+    color: white; 
+    text-align: center; 
     margin-top: 30px;
+    /* Recomendación: Añade 'clear: both' o 'overflow: hidden' aquí si ves que se monta */
 }
 
-footer span{
+footer span {
     float: left;
     margin-left: 400px;
 }
 
-footer-enlaces{
+/* ¡OJO! Aquí faltaba un punto en tu código original, debería ser .footer-enlaces */
+footer-enlaces { 
     float: left;
 }
 
-
-#cuadrao{
-    list-style: square;
+#cuadrao {
+    list-style: square; /* Pone un cuadrado en la lista en vez de un círculo */
     font-size: large;
-
 }
-
