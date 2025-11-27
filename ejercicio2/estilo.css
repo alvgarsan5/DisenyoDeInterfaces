@@ -1,0 +1,139 @@
+:root{
+    --paletacolorc1: #66c2cd;
+    --paletacolorc2: #2daebf;
+    --paletacolorc3: #0f6e7d;
+    --paletacolorc4: #064b55;
+
+    --tipoLetrah1: "Roboto";
+    --tipoLetraLabel: "Roboto";
+}
+header{
+    background-color: aqua;
+}
+
+.paletaColores{
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.colordiv{
+   width: 100px;
+   height: 50px;
+   display: inline-block;
+   margin-left: 20px;
+}
+
+.c1{background-color: var(--paletacolorc1)}
+.c2{background-color: var(--paletacolorc2);}
+.c3{background-color: var(--paletacolorc3);}
+.c4{background-color: var(--paletacolorc4);}
+
+
+
+
+#loren h1{
+    text-align: left;
+    margin-left: 10%;
+    font-family: var(--tipoLetrah1);
+    color: var(--paletacolorc2);
+}
+#loren label{
+    text-align: right;
+    margin-left: 70%;
+    color: var(--paletacolorc4);
+    font-family: var(--tipoLetraLabel);
+    font-size: 24px;
+
+}
+
+#barra-inferior{
+    width: 100%;
+    overflow: hidden; /* IMPORTANTE: Esto hace que el padre recupere su altura */
+}
+
+
+.recuadroHeaders{
+    float: left;
+    width: 20%;
+    height: 30px;
+    border: 2px solid white; /* O el color que uses */
+    box-sizing: border-box;
+    /* IMPORTANTE: No pongas margen lateral (margin-left/right) o se romperá la matemática */
+    margin: 0;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: middle;
+    font-family: var(--tipoLetrah1);
+    
+}
+
+.parrafo{
+    width: 400px;
+}
+
+.parrafo2{
+    width: 275px;
+}
+
+.contenedor{
+    text-align: left;
+}
+
+.contenedor p{
+    margin-left: 100px;
+    margin-top: 0;
+}
+
+.destacado {
+    font-weight: bold;      /* Pone el texto en negrita */
+    font-style: italic;     /* Pone el texto en cursiva */
+    color: #333;            /* Un color un poco más oscuro si lo necesitas */
+    /* text-decoration: underline; */ /* Si quieres que también esté subrayado */
+}
+
+.contenedor h2,h3,h4{
+    color: var(--paletacolorc4);
+    margin-top: auto;
+    float: left;
+}
+
+#contenedor_imagen img{
+float: left;
+}
+
+#contenedor_imagen ul{
+float: left;
+margin: 0;
+padding: 0;
+}
+
+#contenedor_imagen li{
+margin-left: 20px;
+margin-bottom: 10px;
+
+}
+
+#seccionIzq{
+    border-right: 2px solid #ccc;
+    width: 40%;
+    height: 700px;
+}
+
+footer{
+/* Color de fondo turquesa/verde azulado (similar al de la imagen) */
+    background-color: #379683;
+    color: white; /* Color del texto */
+    text-align: center; /* Centra todo el contenido */
+    margin-top: 30px;
+}
+
+footer span{
+    float: left;
+    margin-left: 400px;
+}
+
+footer-enlaces{
+    float: left;
+}
+
+

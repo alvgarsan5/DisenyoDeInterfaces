@@ -1,90 +1,213 @@
-#parrafoOpciones{
-word-spacing: 2em;
-
+/* --- 1. VARIABLES CSS (REQUISITO DE LA HOJA) --- */
+:root {
+    /* Colores */
+    --color-fondo-transparente: rgba(255, 255, 255, 0.7); /* Tu fondo blanco transparente */
+    --color-hover-azul: #89CFF0; /* Azulito para cuando pasas el ratón */
+    --color-borde: black;
+    
+    /* Tipografías (REQUISITO DE LA HOJA) */
+    --fuente-principal: "Century Gothic", "Roboto", sans-serif;
+    
+    /* Tamaños de fuente */
+    --tamano-texto: 16px;  /* Pide 12px o 16px */
+    --tamano-h1: 24px;     /* Pide 24px */
+    --tamano-h2: 20px;     /* Pide 20px */
 }
 
-p, label {
-    font-family: "Century Gothic";
-    font-size: 16px;
+/* --- ESTILOS GENERALES --- */
+body {
+    margin: 0;
+    padding: 0;
 }
 
+/* Aplicamos la tipografía general usando variables */
+p, label, input, select {
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-texto);
+}
+
+/* --- ENCABEZADO --- */
+#seccionHeader {
+    border-style: groove;
+    border-color: var(--color-borde);
+    background-color: antiquewhite;
+    overflow: hidden; /* Para que no se rompa con los floats */
+    padding: 10px;
+}
+
+#principal {
+    overflow: hidden;
+}
+
+/* Títulos usando variables de tamaño */
 h1 {
-    font-family: "Roboto";
-    font-size: 24px;
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-h1);
     float: left;
+    margin: 10px;
 }
-h2{
-    font-family: "Roboto";
-    font-size: 22px;
+
+h2 {
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-h2);
+}
+
+.expedia {
+    /* IMPORTANTE: Usa !important si el navegador se pone terco con el tamaño */
+    width: 200px !important; 
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 #opciones {
     text-align: right;
     float: right;
     word-spacing: 1em;
-    margin-top: 5px;
+    margin-top: 25px; /* Ajustado para alinear con el logo */
 }
 
-#principal {
-overflow: hidden;
+#parrafoOpciones {
+    clear: both; /* Limpia los floats de arriba */
+    word-spacing: 2em;
+    padding-top: 10px;
 }
 
-#seccionHeader{
-    border-style:groove;
-    border-color: black;
-    background-color: antiquewhite;
-
+/* --- FONDO Y SECCIÓN CENTRAL --- */
+#contenedor-bgColor {
+    background-image: url("imagenes/playa-recorrido-arbol-blanco-del-caribe.jpg");
+    width: 100%;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 20px;
 }
 
-#seccionCentral{
+#seccionCentral {
     width: 1000px;
-    height: 600px;
-    margin:0 auto;
-    background-color: aquamarine;
+    /* Quitamos height fijo para que crezca si hace falta */
+    min-height: 500px; 
+    margin: 0 auto;
+    
+    /* Usamos la variable de color */
+    background-color: var(--color-fondo-transparente);
+    
+    border-radius: 15px; /* Queda más bonito */
+    padding: 20px;
+    box-sizing: border-box; /* Para que el padding no ensanche la caja */
 }
 
-#seccionCentral h2{
+#seccionCentral h2 {
     text-align: left;
+    margin-left: 2%;
 }
 
+#serxfl {
+    margin-left: 2%;
+}
 
-.contenedor-tipo-vuelo{
+/* --- CAJAS DE VUELO --- */
+.contenedor-tipo-vuelo {
     background-color: azure;
     width: 150px;
     height: 100px;
-    border-color: black;
-    border-style: groove;
+    border: 1px solid var(--color-borde); /* Simplificado */
     display: inline-block;
     margin: 10px;
     vertical-align: top;
     text-align: center;    
+    margin-left: 2%;
+    cursor: pointer; /* Manita al pasar el ratón */
+    transition: background-color 0.3s; /* Suaviza el cambio de color */
 }
 
+/* --- 2. REQUISITO: HOVER (FONDO AZUL AL PASAR POR ENCIMA) --- */
+.contenedor-tipo-vuelo:hover {
+    background-color: var(--color-hover-azul);
+}
 
-.contenedor-tipo-vuelo2{
+.contenedor-tipo-vuelo2 {
     background-color: azure;
     width: 150px;
     height: 40px;
-    border-color: black;
-    border-style: groove;
+    border: 1px solid var(--color-borde);
     display: inline-block;
     margin: 10px;
     vertical-align: top;
     text-align: center;    
+    margin-left: 2%;
+    padding-top: 5px; /* Para centrar el texto verticalmente */
 }
 
-.ciudad-aeropuerto{
+/* --- FORMULARIOS E INPUTS --- */
+.ciudad-aeropuerto {
     margin: 1%;
+    margin-left: 2%;
+    padding: 5px;
 }
 
-.calendario{
-
+.calendario {
     margin: 1%;
     width: 200px;
-    height: 20px;
+    height: 30px; /* Un poco más alto para que se vea bien */
+    margin-left: 2%;
 }
 
+/* --- OPCIONES AVANZADAS (CHECKBOXES) --- */
 #AdvancedOption {
+    margin-top: 20px;
     text-align: left;
+    margin-left: 2%;
 }
 
+.caja-en-linea {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 15px;
+}
+
+.checkbox-container {
+    text-align: center;
+}
+
+.checkbox-container input {
+    display: block; 
+    margin: 0 auto; 
+    margin-bottom: 2px; 
+}
+
+/* --- BOTÓN SEARCH --- */
+#search {
+    margin-top: 20px;
+    border-radius: 20px; /* Redondo como pide diseño moderno */
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: gold; /* Color típico de botón */
+    margin-left: 2%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- 3. REQUISITO: MEDIA QUERY (PANTALLAS PEQUEÑAS) --- */
+/* Esto se activa si la pantalla mide entre 400px y 800px */
+@media (min-width: 400px) and (max-width: 800px) {
+    
+    /* El contenedor central ya no mide 1000px (no cabría), sino el 90% */
+    #seccionCentral {
+        width: 90%; 
+        height: auto;
+    }
+
+    /* Las cajas de vuelo se hacen más pequeñas para caber */
+    .contenedor-tipo-vuelo {
+        width: 40%; /* Ocupan casi la mitad cada una */
+        margin: 2%;
+    }
+    
+    /* El texto se hace un pelín más pequeño */
+    :root {
+        --tamano-texto: 14px;
+    }
+}

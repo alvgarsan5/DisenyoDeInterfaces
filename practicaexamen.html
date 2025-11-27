@@ -7,24 +7,23 @@
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
+    <div id="contenedor-bgColor">
     <section id="seccionHeader">
     <div id="principal">
-    <h1>🛩️Expedia</h1>
+    <img src="/imagenes/pngegg.png" alt="logo-expedia" class="expedia">
     <p id="opciones">Add your property  Account My Lists My Trips Support Español</p>
     </div>
     
-  
-   
+
     <div id="parrafoOpciones">
         <p>Flights Hotels Bundle and Save  Con  Cruisers Things to do  Discover Deals Rewards</p>
     </div>
     </section>
-   
 
     <section id="seccionCentral">
-        <h2>Search Flights</h2>
+        <h2 id="serxfl">Search Flights</h2>
         <div>
-             <div class="contenedor-tipo-vuelo">
+            <div class="contenedor-tipo-vuelo">
             <label>🛩️</label>
             <p>Flights Only</p>
         </div>
@@ -58,21 +57,38 @@
         <div>
             <input class="calendario" type="date">
             <input class="calendario" type="date">
-            <input type="text" placeholder="👨👩Travellers">
+            <select class="dropdown-control1">
+            <option>👨👩Travellers</option>
+            <option>Configuración 1</option>
+            </select>
         </div>
 
-        <div id="AdvancedOption">
-        <p>Advanced Options</p>
+    <div id="AdvancedOption">
+
+    <div class="caja-en-linea">
+        <label>Advanced Options</label>
         <select class="dropdown-control">
-        <option>Opciones</option>
-        <option>Configuración 1</option>
-        <option>Configuración 2</option>
-         </select>
-        </div>
-        
-       
+            <option>Opciones</option>
+            <option>Configuración 1</option>
+        </select>
+    </div>
 
+    <div class="caja-en-linea checkbox-container">
+        <input type="checkbox" id="cb">
+        <label for="cb">🏨 Add a Hotel</label>
+    </div>
+
+    <div class="caja-en-linea checkbox-container">
+        <input type="checkbox" id="car">
+        <label for="car">🚗 Add a Car</label>
+    </div>
+
+</div>
+
+<button id="search">Search</button>
     </section>
+    </div>
+   
 
 </body>
 </html>
