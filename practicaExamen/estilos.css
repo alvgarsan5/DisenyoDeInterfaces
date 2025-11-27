@@ -1,0 +1,223 @@
+/* --- 1. VARIABLES CSS (:root) --- */
+/* Esto define valores globales. Si cambias el color aquí, se cambia en toda la web a la vez. */
+:root {
+    /* Colores */
+    --color-fondo-transparente: rgba(255, 255, 255, 0.7); /* El 0.7 es la opacidad (70% visible) */
+    --color-hover-azul: #89CFF0; 
+    --color-borde: black;
+    
+    /* Tipografías */
+    --fuente-principal: "Century Gothic", "Roboto", sans-serif;
+    
+    /* Tamaños de fuente (Variables para mantener coherencia) */
+    --tamano-texto: 16px;  
+    --tamano-h1: 24px;     
+    --tamano-h2: 20px;     
+}
+
+/* --- ESTILOS GENERALES --- */
+body {
+    margin: 0; /* Quita el margen blanco que traen los navegadores por defecto */
+    padding: 0;
+}
+
+/* Aplicamos la fuente base a todos los textos comunes */
+p, label, input, select {
+    font-family: var(--fuente-principal); /* Usa la variable definida arriba */
+    font-size: var(--tamano-texto);
+}
+
+/* --- ENCABEZADO (HEADER) --- */
+#seccionHeader {
+    border-style: groove; /* Borde con efecto 3D tallado */
+    border-color: var(--color-borde);
+    background-color: antiquewhite;
+    
+    /* ¡IMPORTANTE! overflow: hidden aquí sirve para "limpiar floats".
+       Como los hijos (h1, opciones) flotan, si no pones esto, el header se quedaría con altura 0. */
+    overflow: hidden; 
+    padding: 10px;
+}
+
+#principal {
+    overflow: hidden; /* Mismo truco para contener elementos flotantes dentro */
+}
+
+/* Títulos */
+h1 {
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-h1);
+    float: left; /* Manda el título a la izquierda */
+    margin: 10px;
+}
+
+h2 {
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-h2);
+}
+
+.expedia {
+    /* !important fuerza que este estilo gane a cualquier otro que intente cambiarlo */
+    width: 200px !important; 
+    height: auto;
+    display: inline-block; /* Permite que conviva en línea con texto */
+    vertical-align: middle; /* Alinea el logo con el texto verticalmente */
+}
+
+#opciones {
+    text-align: right; /* Alinea el texto interno a la derecha */
+    float: right;      /* Mueve todo el bloque a la derecha del header */
+    word-spacing: 1em; /* Aumenta el espacio entre palabras */
+    margin-top: 25px;  /* Para bajarlo un poco y centrarlo con el logo */
+}
+
+#parrafoOpciones {
+    clear: both; /* "Rompe" el flujo de floats anteriores para empezar en línea nueva */
+    word-spacing: 2em;
+    padding-top: 10px;
+}
+
+/* --- FONDO GIGANTE Y SECCIÓN CENTRAL --- */
+#contenedor-bgColor {
+    background-image: url("/imagenes/playa-recorrido-arbol-blanco-del-caribe.jpg");
+    width: 100%;
+    
+    /* 100vh significa el 100% de la altura de la pantalla (Viewport Height).
+       Asegura que el fondo cubra toda la pantalla siempre. */
+    min-height: 100vh; 
+    
+    background-repeat: no-repeat;
+    background-size: cover; /* Estira la imagen para cubrir todo sin deformarla (recorta si hace falta) */
+    background-position: center; /* Centra la imagen */
+    padding-top: 20px;
+}
+
+#seccionCentral {
+    width: 1000px; /* Ancho fijo para escritorio */
+    min-height: 500px; /* Altura mínima, pero puede crecer si metes más contenido */
+    
+    /* TRUCO DE CENTRADO: margin: 0 auto centra horizontalmente los bloques */
+    margin: 0 auto;
+    
+    background-color: var(--color-fondo-transparente); /* Fondo blanco semitransparente */
+    border-radius: 15px; /* Esquinas redondeadas */
+    padding: 20px;
+    box-sizing: border-box; /* Hace que el padding no aumente el tamaño total de la caja (muy útil) */
+}
+
+#seccionCentral h2 {
+    text-align: left;
+    margin-left: 2%;
+}
+
+#serxfl {
+    margin-left: 2%;
+}
+
+/* --- CAJAS DE VUELO (BOTONES CUADRADOS) --- */
+.contenedor-tipo-vuelo {
+    background-color: azure;
+    width: 150px;
+    height: 100px;
+    border: 1px solid var(--color-borde);
+    
+    display: inline-block; /* Se comportan como bloques pero se ponen uno al lado del otro */
+    margin: 10px;
+    vertical-align: top;   /* Se alinean por la parte superior */
+    text-align: center;    
+    margin-left: 2%;
+    
+    cursor: pointer; /* Pone la manita del ratón al pasar por encima */
+    transition: background-color 0.3s; /* Hace que el cambio de color al pasar el ratón sea suave */
+}
+
+/* --- ESTADO HOVER (AL PASAR EL RATÓN) --- */
+.contenedor-tipo-vuelo:hover {
+    background-color: var(--color-hover-azul); /* Cambia el fondo al color azul definido arriba */
+}
+
+.contenedor-tipo-vuelo2 {
+    /* Similar al anterior pero más bajito (height: 40px) */
+    background-color: azure;
+    width: 150px;
+    height: 40px;
+    border: 1px solid var(--color-borde);
+    display: inline-block;
+    margin: 10px;
+    vertical-align: top;
+    text-align: center;    
+    margin-left: 2%;
+    padding-top: 5px;
+}
+
+/* --- FORMULARIOS --- */
+.ciudad-aeropuerto {
+    margin: 1%;
+    margin-left: 2%;
+    padding: 5px; /* Espacio interno para que el texto no toque el borde del input */
+}
+
+.calendario {
+    margin: 1%;
+    width: 200px;
+    height: 30px;
+    margin-left: 2%;
+}
+
+/* --- CHECKBOXES (OPCIONES AVANZADAS) --- */
+#AdvancedOption {
+    margin-top: 20px;
+    text-align: left;
+    margin-left: 2%;
+}
+
+.caja-en-linea {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-right: 15px;
+}
+
+.checkbox-container {
+    text-align: center;
+}
+
+.checkbox-container input {
+    display: block; /* Pone el input en su propia línea (encima del texto) */
+    margin: 0 auto; /* Lo centra respecto a su contenedor */
+    margin-bottom: 2px; 
+}
+
+/* --- BOTÓN SEARCH --- */
+#search {
+    margin-top: 20px;
+    border-radius: 20px; /* Borde muy redondeado (forma de píldora) */
+    width: 100px;
+    height: 35px;
+    border: none;
+    background-color: gold;
+    margin-left: 2%;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* --- MEDIA QUERY (RESPONSIVE / PARA MÓVILES) --- */
+/* Estas reglas SOLO se aplican si la pantalla mide entre 400px y 800px */
+@media (min-width: 400px) and (max-width: 800px) {
+    
+    #seccionCentral {
+        /* Cambiamos el ancho fijo (1000px) por porcentaje para que quepa en el móvil */
+        width: 90%; 
+        height: auto;
+    }
+
+    .contenedor-tipo-vuelo {
+        /* Hacemos las cajas más pequeñas para que quepan dos por fila aprox */
+        width: 40%; 
+        margin: 2%;
+    }
+    
+    /* Redefinimos la variable de texto para que sea más pequeña en móviles */
+    :root {
+        --tamano-texto: 14px;
+    }
+}

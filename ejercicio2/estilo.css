@@ -29,7 +29,11 @@ header{
 .c4{background-color: var(--paletacolorc4);}
 
 
+#papaMain{
+    width: 100%;
+    overflow: hidden;
 
+}
 
 #loren h1{
     text-align: left;
@@ -114,10 +118,107 @@ margin-bottom: 10px;
 }
 
 #seccionIzq{
+    float: left;
     border-right: 2px solid #ccc;
-    width: 40%;
-    height: 700px;
+    width: 45%;
 }
+
+#contenedor_derecho{
+    float: right;
+    position: relative;
+    width: 50%;
+}
+
+/* El cuadradito azul decorativo */
+.cuadradito {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--paletacolorc2); /* Color turquesa */
+    margin-right: 8px;
+}
+
+.titulo-con-cuadro {
+    color: var(--paletacolorc4);
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Para poner imagen a la izquierda y texto a la derecha */
+.contenido-mix {
+    overflow: hidden; /* Limpia los floats internos */
+    margin-bottom: 20px;
+}
+
+.img-noticia {
+    float: left;
+    width: 80px; /* Tamaño de la imagen pequeña */
+    height: auto;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+}
+
+.texto-noticia {
+    overflow: hidden; /* Hace que el texto no se meta debajo de la imagen */
+}
+
+.texto-noticia h5 {
+    margin: 0 0 5px 0;
+    color: #666;
+    font-weight: bold;
+}
+
+.texto-noticia p {
+    margin: 0;
+    font-size: 14px;
+    color: #888;
+    line-height: 1.4;
+}
+
+.enlace-leer {
+    display: block;
+    text-align: right;
+    color: var(--paletacolorc3);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* --- CAJAS Y BOTONES DEL TERCER BLOQUE --- */
+.cajas-botones {
+    overflow: hidden;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+.caja-info {
+    float: left;
+    width: 55%;
+    background-color: var(--paletacolorc2);
+    color: #064b55;
+    padding: 10px;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.boton-verde {
+    float: right;
+    width: 40%;
+    background-color: var(--paletacolorc4); /* Verde oscuro */
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.boton-verde:hover {
+    background-color: #0f6e7d;
+}
+
+
 
 footer{
 /* Color de fondo turquesa/verde azulado (similar al de la imagen) */
@@ -136,4 +237,10 @@ footer-enlaces{
     float: left;
 }
 
+
+#cuadrao{
+    list-style: square;
+    font-size: large;
+
+}
 

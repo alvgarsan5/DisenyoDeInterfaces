@@ -1,0 +1,420 @@
+/* --- 1. ZONA DE VARIABLES (LA "PALETA DE PINTOR") --- */
+:root {
+    /* Aquí definimos los colores base. Si el cliente dice "quiero que sea azul",
+       solo cambias estos códigos y toda la web cambia de color mágicamente. */
+    
+    --c-header: #a64d79;  /* Color de fondo del encabezado principal */
+    --c-texto: #555555;   /* Gris oscuro para el texto normal (se lee mejor que el negro puro) */
+    
+    /* Gama de rosas (del claro al oscuro) */
+    --c-rosa-1: #dcaec4;  
+    --c-rosa-2: #c27ba0;  
+    --c-rosa-3: #a64d79; 
+    --c-granate: #741b47;     
+    
+    /* Colores funcionales */
+    --c-hover: #8f3460;       /* Color al pasar el ratón */
+    --c-titulo: #5a1e36;      /* Color oscuro para títulos importantes */
+    --c-texto-btn: #fadbec;   /* Color claro para texto dentro de botones oscuros */
+}
+
+/* --- 2. RESETEO BÁSICO (LIMPIEZA) --- */
+* {
+    margin: 0;
+    padding: 0;
+    /* ¡VITAL! box-sizing: border-box hace que si pones un width de 100px y un padding de 20px,
+       la caja siga midiendo 100px en total, no 140px. Evita que se rompa la maquetación. */
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Si no tiene Arial, usa Helvetica... */
+    color: var(--c-texto);
+    background-color: #ffffff; 
+    overflow-x: hidden; /* Seguridad: impide que salga barra de scroll horizontal si algo se sale */
+}
+
+/* --- 3. CONTENEDOR PRINCIPAL --- */
+.contenedor-principal-web {
+    width: 100%; 
+    margin: 0;
+    background-color: #fefefe; /* Un blanco casi puro */
+}
+
+/* --- 4. BARRA DE RECTÁNGULOS (ARRIBA DEL TODO) --- */
+.barra-rectangulos-superior {
+    background-color: var(--c-rosa-3); 
+    height: 45px; 
+    padding: 5px 2%; /* Relleno a los lados para que los bloques no toquen el borde pantalla */
+    
+    overflow: hidden; /* Obliga al contenedor a reconocer la altura de los hijos flotantes */
+    
+    /* TRUCO DE CAPAS: position: relative habilita el z-index.
+       z-index: 20 asegura que esta barra esté ENCIMA de cualquier foto o adorno que se suba. */
+    position: relative;
+    z-index: 20;
+}
+
+.bloque-color {
+    float: left; /* Pone los bloques uno al lado del otro */
+    height: 100%; 
+    margin-right: 1.5%; /* Espacio entre bloquecitos */
+}
+
+/* Asignamos colores. Fíjate que los anchos (10% x 4 + 54% + márgenes) deben cuadrar aprox al 100% */
+.color-uno { width: 10%; background-color: var(--c-rosa-1); }
+.color-dos { width: 10%; background-color: var(--c-rosa-2); }
+.color-tres { width: 10%; background-color: var(--c-granate); }
+.color-cuatro { width: 10%; background-color: #4a1226; }
+
+/* El último bloque es el largo que cierra la fila */
+.color-cinco-largo { 
+    width: 54%; 
+    margin-right: 0; /* Al último le quitamos el margen para que no empuje */
+    background-color: var(--c-rosa-2); 
+}
+
+
+/* --- 5. CABECERA (HEADER) CON CAPAS --- */
+.cabecera-principal {
+    background-color: var(--c-header);
+    height: 135px;
+    
+    /* position: relative aquí convierte a la cabecera en el "punto de referencia"
+       para los elementos absolute que hay dentro (título, silueta, etc.) */
+    position: relative; 
+    color: white;
+    z-index: 10;
+}
+
+h1 {
+    font-family: "Times New Roman", serif; /* Fuente elegante para contraste */
+    font-size: 70px; 
+    font-weight: normal; 
+    
+    /* POSICIONAMIENTO ABSOLUTO: "Colócate pegado abajo (bottom) y a la izquierda (left)
+       de tu padre (.cabecera-principal)" */
+    position: absolute;
+    bottom: 15px;
+    left: 2%; 
+    
+    color: rgba(255,255,255, 0.85); /* Blanco con un poco de transparencia */
+    line-height: 1;
+    z-index: 15; /* Nivel 15: Está por encima de la silueta (nivel 1) pero debajo de la barra superior (nivel 20) */
+}
+
+.texto-decorativo-derecha {
+    /* Texto pequeño a la derecha (ej: "DIOS AUTE...") */
+    position: absolute;
+    bottom: 30px;
+    right: 250px; /* Lo empujamos 250px desde la derecha para dejar sitio a la silueta */
+    text-align: right;
+    font-weight: bold;
+    color: var(--c-titulo);
+    text-transform: uppercase; /* Lo pone todo en MAYÚSCULAS automáticamente */
+    font-size: 16px; 
+    z-index: 15; 
+}
+
+/* SILUETA DE FONDO */
+.zona-silueta-header {
+    position: absolute;
+    bottom: 0;
+    right: 2%;
+    height: 100%; 
+    width: 200px; 
+    overflow: hidden;
+    z-index: 1; /* Nivel 1: Es la capa más baja, para que el texto pase por encima de ella */
+}
+
+.zona-silueta-header img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5; /* Hacemos la imagen semitransparente para que se mezcle con el fondo rosa */
+}
+
+/* --- 6. MENÚ DE NAVEGACIÓN --- */
+.menu-navegacion {
+    background-color: var(--c-rosa-2);
+    border-bottom: 4px solid #ffffff; /* La línea blanca debajo del menú */
+}
+
+.menu-navegacion ul {
+    list-style: none; /* Quita los puntos negros de la lista */
+    overflow: hidden; /* Limpia los floats de los <li> */
+}
+
+.menu-navegacion li {
+    float: left; /* Pone los botones en horizontal */
+    width: 20%;  /* Como son 5 botones, 20% x 5 = 100% del ancho */
+    border: 1px solid #ffffff; 
+    margin-left: -1px; /* TRUCO: Un margen negativo para que los bordes se superpongan y no se vean dobles */
+}
+
+.menu-navegacion li:first-child { 
+    margin-left: 0.1%; /* Pequeño ajuste visual para centrar el primero */
+}
+
+.menu-navegacion a {
+    display: block; /* Hace que todo el botón sea clickable, no solo el texto */
+    text-align: center;
+    padding: 15px 0; 
+    text-decoration: none; /* Quita el subrayado del enlace */
+    color: var(--c-texto-btn); 
+    text-transform: uppercase;
+    font-size: 15px; 
+    background-color: var(--c-rosa-2);
+}
+
+/* Efecto al pasar el ratón */
+.menu-navegacion a:hover {
+    background-color: var(--c-hover); /* Se oscurece */
+    color: #ffffff; /* Texto blanco puro */
+}
+
+/* Clase para marcar en qué página estamos actualmente */
+.boton-activo {
+    background-color: var(--c-granate) !important; 
+}
+
+.cuadrado-icono {
+    /* El cuadradito decorativo antes del texto del menú */
+    color: var(--c-rosa-2);
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* --- 7. ESTRUCTURA DEL CONTENIDO (COLUMNAS) --- */
+.contenedor-contenido {
+    padding: 30px 6% 20px 6%; /* Mucho margen a los lados (6%) para centrar la lectura */
+    background-color: #ffffff;
+    overflow: hidden; /* Limpia los floats internos */
+    min-height: 500px; 
+}
+
+/* COLUMNA IZQUIERDA */
+.zona-lateral-izquierda {
+    float: left;
+    width: 40%;
+    padding-right: 4%; /* Espacio para que el texto no toque la línea divisoria */
+    border-right: 1px dotted #cccccc; /* La línea de puntos vertical divisoria */
+}
+
+h2 {
+    color: var(--c-granate);
+    font-weight: normal;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6; /* Altura de línea para que sea fácil de leer */
+    margin-bottom: 20px;
+    font-size: 16px; 
+    color: #666666;
+}
+
+.enlace-rojo {
+    color: var(--c-granate);
+    text-decoration: underline;
+}
+
+/* Lista de definiciones (Texto izquierda negrita / Texto derecha normal) */
+.fila-definicion {
+    margin-bottom: 6%;
+    overflow: hidden; /* Importante porque dentro hay floats */
+}
+
+.titulo-definicion {
+    float: left;
+    width: 20%;
+    font-weight: bold;
+    color: var(--c-granate);
+    font-size: 16px; 
+}
+
+.texto-definicion {
+    float: left;
+    width: 80%;
+    font-size: 16px; 
+    color: #777777;
+}
+
+/* BLOQUE DE LA LETRA "L" GIGANTE */
+.contenedor-bloque-l {
+    margin-top: 30px; 
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.caja-letra-l {
+    float: left;
+    width: 60px; 
+    height: 60px;
+    background-color: var(--c-granate);
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    line-height: 60px; /* Centra la letra verticalmente (igual que el height) */
+    font-weight: bold;
+    margin-right: 20px; 
+}
+
+.texto-bloque-l {
+    float: left;
+    width: 70%; 
+    font-size: 17px; 
+}
+
+.texto-bloque-l ul {
+    margin-left: 7%;
+    color: var(--c-granate); /* Pone los puntos de la lista rojos */
+}
+
+
+/* --- COLUMNA DERECHA (NOTICIAS) --- */
+.zona-noticias-derecha {
+    float: right; /* Se va a la derecha */
+    width: 56%;   /* 40% izq + 56% der + márgenes = 100% aprox */
+    padding-left: 2%;
+}
+
+.articulo-noticia {
+    margin-bottom: 30px; 
+    overflow: hidden; /* "Abraza" la imagen y el texto flotantes */
+}
+
+.cuadrado-titulo {
+    /* Cuadradito rosa pequeño antes del título */
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--c-rosa-2);
+    margin-right: 8px;
+}
+
+.contenedor-imagen {
+    float: left;
+    width: 30%; 
+    margin-right: 4%;
+    background-color: #dddddd;
+    height: 100px; 
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen rellena el cuadro sin estirarse raro */
+    border: 1px solid #cccccc;
+    padding: 2px;
+    background: white; /* Efecto marco de foto */
+}
+
+.enlace-leer-mas {
+    display: block;
+    text-align: right; /* Alineado a la derecha como pide el diseño */
+    color: var(--c-granate);
+    font-weight: bold;
+    font-size: 17px; 
+    margin-top: 10px;
+}
+
+/* CAJAS DESTACADAS (Texto rosa + Botón oscuro) */
+.grupo-cajas-destacadas {
+    overflow: hidden;
+    margin-top: 5%; 
+    width: 100%;
+}
+
+/* display: table se usa aquí para centrar verticalmente el texto dentro de la caja */
+.caja-info-rosa {
+    float: left;
+    background-color: var(--c-rosa-1);
+    padding: 10px; 
+    width: 68%;
+    min-height: 60px; 
+    margin-right: 2%;
+    display: table; 
+}
+
+.caja-info-rosa span {
+    display: table-cell;
+    vertical-align: middle; /* Esto centra el texto verticalmente */
+}
+
+.boton-accion-granate {
+    float: right;
+    background-color: var(--c-granate);
+    color: var(--c-texto-btn);
+    text-decoration: none;
+    padding: 10px; 
+    text-align: center;
+    width: 30%;
+    min-height: 60px; 
+    display: table;
+}
+
+.boton-accion-granate span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/* --- 8. PIE DE PÁGINA (FOOTER) --- */
+.pie-pagina {
+    clear: both; /* OBLIGATORIO: Dice "bájate debajo de todos los floats anteriores" */
+    background-color: var(--c-rosa-2);
+    border-top: 1px solid #a64d79;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 17px; 
+    color: var(--c-titulo);
+    width: 100%;
+}
+
+
+/* --- 9. RESPONSIVE (MÓVILES) --- */
+/* Estas reglas sobreescriben a las anteriores si la pantalla mide 800px o menos */
+@media (max-width: 800px) {
+    
+    .contenedor-contenido {
+        padding: 20px; /* Menos margen en móviles */
+    }
+
+    h1 { font-size: 50px; left: 10px; } /* Título más pequeño */
+    
+    .texto-decorativo-derecha { display: none; } /* Ocultamos decoraciones para ahorrar espacio */
+    .zona-silueta-header { display: none; } 
+    
+    .cabecera-principal { height: 120px; }
+
+    /* Convertimos el menú horizontal en vertical */
+    .menu-navegacion li {
+        float: none; /* Quitamos el float */
+        width: 100%; /* Ancho total */
+        margin-left: 0;
+        border: none;
+        border-bottom: 1px solid rgba(255,255,255,0.5); /* Línea separadora */
+    }
+
+    /* Columnas: Ya no flotan, ahora ocupan el 100% y se ponen una debajo de otra */
+    .zona-lateral-izquierda, .zona-noticias-derecha {
+        float: none;
+        width: 100%;
+        padding: 0;
+        border: none;
+    }
+
+    .zona-lateral-izquierda {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #ddd; /* Línea para separar la zona izq de la der */
+        padding-bottom: 20px;
+    }
+
+    /* Las cajas de abajo también se apilan (stack) */
+    .caja-info-rosa, .boton-accion-granate {
+        width: 100%;
+        float: none;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
