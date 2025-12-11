@@ -1,0 +1,91 @@
+#contenedor-principal{
+    border-color: black;
+    border-style: solid;
+    border-radius:10%;
+    border-width:5px;
+    width: 400px;
+    height: 600px;
+    border-radius: 20px;
+    justify-content: center;
+    background-color: orange;
+    /* PROPIEDAD DE SOMBRA AGREGADA */
+    box-shadow: 15px 15px 5px rgba(0, 0, 0, 0.4);
+    /* CAMBIOS CLAVE PARA CENTRAR UN HIJO FLEX: */
+    display: flex; 
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    align-self: center;
+    display: flex;
+    
+
+}
+
+#pantalla-resultado{
+    margin: 4%;
+    border-style: solid;
+    border-color: black;
+    border-width:5px;
+    height: 75px;
+    width: 250;
+    border-radius: 5px;
+    margin-top: 30px;
+    background-color: white;
+    font-weight: bold;
+    display:flex;
+    align-items:end;
+    /* CAMBIO CLAVE: Usar justify-content 
+    para alinear el contenido al final del eje principal */
+    justify-content: flex-end;
+    padding-bottom: 60px;
+    font-size: 30px;
+    
+}
+
+#contenedor-amarillo{
+    width: 95%;
+    height: 95%;
+    background-color: yellow;
+    border-top: 0;
+    border-bottom: 0;
+    border-radius: 10px;
+    
+}
+
+#contenedor-botones{
+    display: flex;
+    margin: 5%;
+}
+
+.blanco{
+    color: black;
+    background-color: white;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    margin-bottom: 5%;
+}
+
+.rosa{
+    color: black;
+    background-color: pink;
+    font-weight: bold;
+     width: 70px;
+    height: 70px;
+    padding: 20px;
+    margin-bottom: 5%;
+}
+
+
+.azul{
+    background-color:aqua;
+    font-weight: bold;
+    width: 70px;
+    height: 70px;
+    padding: 20px;
+    margin-bottom: 5%;
+
+}
+
+
+
