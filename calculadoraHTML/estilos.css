@@ -22,27 +22,53 @@
 }
 
 #pantalla-resultado{
-    margin: 4%;
-    border-style: solid;
-    border-color: black;
-    border-width:5px;
-    height: 45px;
-    width: 250;
-    border-radius: 5px;
-    margin-top: 30px;
+    
+    width: 100%;
+    height: 70px; /* Altura del display */
     background-color: white;
-    font-weight: bold;
-    display:flex;
-    align-items:end;
-    /* CAMBIO CLAVE: Usar justify-content 
-    para alinear el contenido al final del eje principal */
-    justify-content: flex-end;
-    padding-bottom: 40px;
+    
+    /* Alinear texto */
+    display: flex;
+    justify-content: flex-end; /* Texto a la derecha */
+    align-items: flex-end; /* Texto abajo */
+    padding: 5px;
+    
     font-size: 30px;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-sizing: border-box; /* Para que el padding no deforme el ancho */
+    border: 5px solid black;
+    border-width: 5px;
+    
+}
+
+
+#bordeDisplay {
+    margin-top: 10px;
+    width: 90%;
+    background-color: white;
+    border: 8px solid #FFC000; /* EL BORDE NEGRO GRUESO */
+    border-radius: 5px;
+    margin-bottom: 20px; /* Separa el display de los botones */
+    overflow: hidden; /* Asegura que lo de adentro no se salga */
     
 }
 
 #contenedor-amarillo{
+
+    background-color: #FFC000; 
+    border-radius: 20px; 
+    
+    /* Reducimos o quitamos el padding para evitar espacio extra */
+    padding: 0px; 
+    box-sizing: border-box; 
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+
     width: 95%;
     height: 100%;
     background-color: yellow;
