@@ -1,10 +1,11 @@
+
 #contenedor-principal{
     border-color: black;
     border-style: solid;
     border-radius:10%;
     border-width:5px;
     width: 400px;
-    height: 600px;
+    height: 500px;
     border-radius: 20px;
     justify-content: center;
     background-color: orange;
@@ -25,7 +26,7 @@
     border-style: solid;
     border-color: black;
     border-width:5px;
-    height: 75px;
+    height: 45px;
     width: 250;
     border-radius: 5px;
     margin-top: 30px;
@@ -36,24 +37,26 @@
     /* CAMBIO CLAVE: Usar justify-content 
     para alinear el contenido al final del eje principal */
     justify-content: flex-end;
-    padding-bottom: 60px;
+    padding-bottom: 40px;
     font-size: 30px;
     
 }
 
 #contenedor-amarillo{
     width: 95%;
-    height: 95%;
+    height: 100%;
     background-color: yellow;
     border-top: 0;
     border-bottom: 0;
     border-radius: 10px;
-    
+    font-size: 50px;
 }
 
 #contenedor-botones{
     display: flex;
     margin: 5%;
+    font-weight: bold;
+    font-size: 40px;
 }
 
 .blanco{
@@ -61,31 +64,44 @@
     background-color: white;
     font-weight: bold;
     width: 70px;
-    height: 70px;
+    height: 60px;
     padding: 20px;
     margin-bottom: 5%;
+    border-radius: 10px;
+    border-width:  3px;
+    font-size: 22px;
 }
 
 .rosa{
     color: black;
-    background-color: pink;
+    background-color: #FF0080;
     font-weight: bold;
-     width: 70px;
-    height: 70px;
+    width: 70px;
+    height: 60px;
     padding: 20px;
     margin-bottom: 5%;
+    border-radius: 10px;
+    border-width:  3px;
+    font-size: 22px;
 }
 
 
 .azul{
-    background-color:aqua;
+    background-color:#00BFFF;
     font-weight: bold;
     width: 70px;
-    height: 70px;
+    height: 60px;
     padding: 20px;
     margin-bottom: 5%;
+    border-radius: 10px;
+    border-width:  3px;
+    font-size: 22px;
 
 }
+
+
+
+
 
 
 
