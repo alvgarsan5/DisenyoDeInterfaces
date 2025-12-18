@@ -48,6 +48,7 @@
     border-top: 0;
     border-bottom: 0;
     border-radius: 10px;
+
     
 }
 
@@ -63,7 +64,8 @@
     width: 70px;
     height: 70px;
     padding: 20px;
-    margin-bottom: 5%;
+
+    border-radius: 10px;
 }
 
 .rosa{
@@ -73,7 +75,7 @@
      width: 70px;
     height: 70px;
     padding: 20px;
-    margin-bottom: 5%;
+    border-radius: 10px;
 }
 
 
@@ -83,7 +85,8 @@
     width: 70px;
     height: 70px;
     padding: 20px;
-    margin-bottom: 5%;
+    
+    border-radius: 10px;
 
 }
 
