@@ -1,0 +1,31 @@
+body{
+    background-color: aquamarine;
+}
+
+.caja{
+    border: 1px solid #2e2c2c;
+    background-color: whitesmoke;
+    color: rgb(0, 0, 0);
+    width: 120px;
+    font-weight: bold;
+    line-height: 120px;
+    text-align: center;
+    margin: 5px;
+    
+
+
+}
+
+
+.contenedor-flex{
+    display: flex;
+
+    border: 3px;
+    background-color: blueviolet;
+    padding: 10px;
+    flex-wrap: wrap;
+    justify-content:flex-start;
+    height: 700px;
+    align-items: flex-start;
+    align-content: flex-start;
+}
