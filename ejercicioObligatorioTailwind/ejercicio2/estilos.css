@@ -11,7 +11,6 @@
 @utility btn-socio {
   /* En v4, si la variable está en @theme, la usas sin guiones extra */
   @apply bg-club text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-club;
-  /* Ojo: scale-120 no existe por defecto, usa scale-110 o scale-125 */
   @apply hover:scale-110 hover:bg-sky-500; 
   @apply lg:text-xl lg:px-12; 
 }
