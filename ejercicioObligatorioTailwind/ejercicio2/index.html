@@ -1,46 +1,56 @@
 <!DOCTYPE html>
-<html lang="es" class=""> 
-<head>
+<html lang="es" class=""> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Club Deportivo</title>
+    <title>Club Deportivo El Puig</title>
     <link href="./dist/output.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors">
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors font-club">
 
-    <nav class="flex justify-between p-5 bg-white dark:bg-gray-800 shadow">
-        <div class="font-bold text-xl text-(--color-club)">EL PUIG FUTBOL CLUB</div>
-        <ul class="hidden md:flex gap-4">
-            <li><a href="#" class="hover:text-(--color-club)">Inicio</a></li>
-            <li><a href="#" class="hover:text-(--color-club)">Equipo</a></li>
-            <li><a href="#" class="hover:text-(--color-club)">Horarios</a></li>
-            <li><a href="#" class="hover:text-(--color-club)">Contacto</a></li>
+   <nav class="flex justify-between items-center p-5 bg-white dark:bg-gray-800 shadow-md">
+    <div class="flex items-center gap-3">
+        <img src="/ejercicioObligatorioTailwind/imagenes/3.jpg" alt="Logo El Puig FC" class="h-12 w-auto"> 
+        <div class="font-bold text-xl text-club dark:text-green-400">EL PUIG FUTBOL CLUB</div>
+    </div>
+
+    <div class="flex items-center gap-6">
+        <ul class="hidden md:flex gap-6 font-medium">
+            <li><a href="#" class="hover:text-club dark:hover:text-green-400 transition-colors">Inicio</a></li>
+            <li><a href="#" class="hover:text-club dark:hover:text-green-400 transition-colors">Equipo</a></li>
+            <li><a href="#" class="hover:text-club dark:hover:text-green-400 transition-colors">Horarios</a></li>
+            <li><a href="#" class="hover:text-club dark:hover:text-green-400 transition-colors">Contacto</a></li>
         </ul>
-    </nav>
-
-    <header class="bg-green-300 dark:bg-green-800 text-white h-64 flex flex-col justify-center items-center">
-        <h1 class="text-5xl font-bold">EL PUIG F.C</h1>
-        <p class="mb-4 text-2xl">Tu club de confianza ;)</p>
         
-        <button class="@btn-socio">Hazte socio</button>
+        <button onclick="document.documentElement.classList.toggle('dark')" class="btn-principal text-sm">
+            Mi Perfil
+        </button>
+    </div>
+</nav>
+
+    <header class="bg-green-200 dark:bg-green-900 text-gray-800 dark:text-white h-80 flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-5xl lg:text-7xl font-bold mb-2">EL PUIG F.C</h1>
+        <p class="mb-8 text-xl lg:text-2xl italic">Tu club de confianza en las buenas y en las malas!</p>
+        
+        <button class="btn-socio">Hazte socio</button>
     </header>
 
-    <section class="p-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-md dark:shadow-none text-center border-b-4 border-(--color-club)">
-            <h3 class="font-bold mb-2">Instalaciones</h3>
-            <p class="text-gray-600 dark:text-gray-300">Campos de césped recién renovados.</p>
+    <section class="p-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-b-4 border-club">
+            <h3 class="font-bold text-xl mb-2">Instalaciones</h3>
+            <p class="text-gray-600 dark:text-gray-400">Campos de césped recién renovados con iluminación LED  y máquinas expendedoras  y sala de juegos.</p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-md dark:shadow-none text-center border-b-4 border-(--color-club)">
-            <h3 class="font-bold mb-2">Entrenadores</h3>
-            <p class="text-gray-600 dark:text-gray-300">Profesionales con licencia.</p>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-b-4 border-club">
+            <h3 class="font-bold text-xl mb-2">Entrenadores</h3>
+            <p class="text-gray-600 dark:text-gray-400">Cuerpo técnico con titulación y amplia experiencia.</p>
         </div>
 
-        <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-md dark:shadow-none text-center border-b-4 border-(--color-club)">
-            <h3 class="font-bold mb-2">Competiciones</h3>
-            <p class="text-gray-600 dark:text-gray-300">Ligas profesionales.</p>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border-b-4 border-club">
+            <h3 class="font-bold text-xl mb-2">Competiciones</h3>
+            <p class="text-gray-600 dark:text-gray-400">Participamos en grandes ligas, proximamene contra los ladrones del Real Madrid F.C.</p>
         </div>
     </section>
+
 
 </body>
 </html>
