@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IN+Guides&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-titulos: "Playwrite IN Guides", cursive;
+
+  /* Sin comillas y usando var() para llamar al color interno */
+  --color-alvaro: var(--color-emerald-500);
+}
+

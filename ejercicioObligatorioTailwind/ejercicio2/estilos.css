@@ -1,2 +1,18 @@
 @import "tailwindcss";
 
+@theme {
+  /* 1. Personalización del tema */
+  --color-corporativo: #166534; /* Un verde bosque para El Puig */
+  --shadow-club: 0 10px 15px -3px rgba(22, 101, 52, 0.4);
+  --font-club: "Inter", sans-serif;
+}
+
+/* 2. Componente reutilizable con @utility */
+@utility btn-socio {
+  @apply bg-(--color-corporativo) text-white font-bold py-3 px-8 rounded-full transition-all duration-300 shadow-(--shadow-club);
+  @apply hover:scale-105 hover:bg-orange-500 hover:shadow-orange-200;
+  @apply lg:text-xl lg:px-12; /* Responsive lg: */
+}
+
+/* 3. Ajustes para Modo Oscuro (se activa con la clase 'dark' en el html) */
+@variant dark (&:where(.dark, .dark *));
