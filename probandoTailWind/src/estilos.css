@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+    --color-bosque: #1b4332;
+    --text-xl: 45px;
+}
+
+@utility ficha-planta {
+    @apply border border-gray-200 rounded-2xl shadow-md p-6 m-2 bg-white;
+}
+
+@utility btn-compra {
+    @apply border border-black rounded-2xl shadow-md p-6 m-2 bg-sky-300 text-white;
+}
+
+@layer components {
+        header h1{
+         @apply text-xl text-black font-bold  italic;
+
+         @media (max-width: 750px) {
+         @apply text-xs; /* Usando una clase de Tailwind dentro de la media query  */
+}
+        }
+
+        body{
+           /* @apply bg-slate-200 */
+           @apply --color-bosque 
+        }
+}
+
