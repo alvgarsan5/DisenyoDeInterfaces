@@ -6,7 +6,7 @@
 }
 
 @utility ficha-planta {
-    @apply border border-gray-200 rounded-2xl shadow-md p-6 m-2 bg-white;
+    @apply border border-gray-200 rounded-2xl shadow-md p-6 m-2 bg-green-300;
 }
 
 @utility btn-compra {
@@ -14,17 +14,34 @@
 }
 
 @layer components {
-        header h1{
-         @apply text-xl text-black font-bold  italic;
+    body {
+        @apply bg-bosque min-h-screen flex flex-col items-center;
+    }
 
-         @media (max-width: 750px) {
-         @apply text-xs; /* Usando una clase de Tailwind dentro de la media query  */
-}
+    header {
+        @apply flex justify-between items-center p-2 m-5 w-full max-w-6xl;
+        
+        h1 {
+            @apply text-xl text-black font-bold italic;
+            @media (max-width: 750px) { @apply text-xs; }
         }
 
-        body{
-           /* @apply bg-slate-200 */
-           @apply --color-bosque 
+        nav {
+            @apply flex items-center gap-6;
         }
+    }
+
+    /* AQUÍ EL CAMBIO RESPONSIVO [cite: 13, 14] */
+    .contenedor-productos {
+        @apply flex flex-row flex-wrap justify-around items-start w-full;
+        
+        @media (max-width: 750px) {
+            @apply flex-col items-center;
+        }
+    }
+
+    .ficha-planta {
+        @apply ficha-planta w-full max-w-sm md:max-w-xs; /* Ajuste de ancho opcional [cite: 59, 60] */
+    }
 }
 
